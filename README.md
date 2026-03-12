@@ -24,3 +24,6 @@ Dashboard ini terdiri dari 5 bagian utama yang menjawab berbagai pertanyaan bisn
 conda create --name main-ds python=3.9
 conda activate main-ds
 pip install -r requirements.txt
+D:
+cd "D:\DOKUMEN & TUGAS KULIAH\DICODING\latihanDicoding\fundamental analisis data\submission_riadin\dashboard-project"
+streamlit run dashboard.py
