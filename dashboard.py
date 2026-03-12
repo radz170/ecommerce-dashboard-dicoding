@@ -99,18 +99,18 @@ for column in datetime_columns:
     all_df[column] = pd.to_datetime(all_df[column])
 
 # Membuat Filter Sidebar
-min_date = all_df["order_purchase_timestamp"].min()
-max_date = all_df["order_purchase_timestamp"].max()
+min_date = all_df["order_purchase_timestamp"].min().date()
+max_date = all_df["order_purchase_timestamp"].max().date()
 
 with st.sidebar:
     st.image("https://github.com/dicodingacademy/assets/raw/main/logo.png")
     
     start_date, end_date = st.date_input(
-        label='Rentang Waktu',
-        min_value=min_date,
-        max_value=max_date,
-        value=[min_date, max_date]
-    )
+    "Rentang Waktu",
+    min_value=min_date,
+    max_value=max_date,
+    value=(min_date, max_date)
+)
 
 # Filter data utama
 main_df = all_df[(all_df["order_purchase_timestamp"].dt.date >= start_date) & 
